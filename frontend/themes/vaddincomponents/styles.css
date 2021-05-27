@@ -1,0 +1,7 @@
+@import url('./views/main-view.css');
+@import url('./views/input-view.css');
+@import url('./views/text-area-view.css');
+@import url('./views/select-box-view.css');
+@import url('./views/radio-button-view.css');
+@import url('./views/checkbox-view.css');
+@import url('lumo-css-framework/all-classes.css');
