@@ -5,18 +5,21 @@ import com.example.application.views.main.MainView;
 import com.example.application.views.table.model.User;
 import com.example.application.views.table.service.UserService;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.IntegerField;
+import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Route(value = "table", layout = MainView.class)
 @PageTitle("Table")
+@CssImport("themes/vaddincomponents/views/pagination-view.css")
 public class TableView extends VerticalLayout {
 
     private final UserService userService;
@@ -39,7 +42,7 @@ public class TableView extends VerticalLayout {
         this.userService = userService;
 
         page = 1;
-        limit = 10;
+        limit = 12;
         total = userService.getTotal();
 
         userGrid.setSizeFull();
@@ -51,11 +54,12 @@ public class TableView extends VerticalLayout {
         });
 
         selectPage = new Select<>();
-        selectPage.setItems(10, 20, 30);
+        selectPage.setItems(12, 24, 36);
         selectPage.setValue(limit);
         selectPage.setHelperText("Choose number items per page");
         pageField = new IntegerField();
         pageField.setValue(page);
+        pageField.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
         firstButton = new Button("<<");
         lastButton = new Button(">>");
         previousButton = new Button("<");
@@ -80,6 +84,7 @@ public class TableView extends VerticalLayout {
 
         selectPage.addValueChangeListener(e -> {
             setLimit(e.getValue());
+            setPage(1);
             buttonEvent();
         });
     }

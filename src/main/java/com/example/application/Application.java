@@ -25,7 +25,7 @@ import com.vaadin.flow.theme.Theme;
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
     public static void main(String[] args) {
-        for(int i = 0; i < 240; i++) {
+        for(int i = 0; i < 247; i++) {
             User user = new User((long) (i + 1), i + "firstname", i + "lastname", "member" + i + "@sapiens.com");
             UserService.users.add(user);
         }
