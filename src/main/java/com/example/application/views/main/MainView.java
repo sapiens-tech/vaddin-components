@@ -2,6 +2,7 @@ package com.example.application.views.main;
 
 import java.util.Optional;
 
+import com.example.application.views.table.TableView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -84,7 +85,9 @@ public class MainView extends AppLayout {
     private Component[] createMenuItems() {
         return new Tab[]{createTab("Input", InputView.class), createTab("Text Area", TextAreaView.class),
                 createTab("Select Box", SelectBoxView.class), createTab("Radio Button", RadioButtonView.class),
-                createTab("Checkbox", CheckboxView.class)};
+                createTab("Checkbox", CheckboxView.class),
+                createTab("Table", TableView.class)
+        };
     }
 
     private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
