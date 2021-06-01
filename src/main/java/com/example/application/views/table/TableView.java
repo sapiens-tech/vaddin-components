@@ -15,7 +15,6 @@ import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextFieldVariant;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -179,7 +178,7 @@ public class TableView extends VerticalLayout {
     public ArrayList<Integer> pageChange() {
         ArrayList<Integer> items = new ArrayList<>();
         int firstIndex = Math.max(page - (numberOfDisplayPage / 2), 1);
-        int lastIndex = Math.min(Math.max(page + (numberOfDisplayPage / 2), 5), totalPage());
+        int lastIndex = Math.min(Math.max(page + (numberOfDisplayPage / 2), numberOfDisplayPage), totalPage());
         if(page == totalPage() || page == (totalPage() - 1)) {
             firstIndex = totalPage() - numberOfDisplayPage + 1;
             lastIndex = totalPage();
