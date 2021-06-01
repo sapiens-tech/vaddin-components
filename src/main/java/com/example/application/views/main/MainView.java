@@ -4,6 +4,7 @@ import com.example.application.views.checkbox.CheckboxView;
 import com.example.application.views.date_time_picker.DateTimePickerView;
 import com.example.application.views.input.InputView;
 import com.example.application.views.radiobutton.RadioButtonView;
+import com.example.application.views.range_date_time_picker.RangeDateTimePickerView;
 import com.example.application.views.selectbox.SelectBoxView;
 import com.example.application.views.textarea.TextAreaView;
 import com.vaadin.flow.component.Component;
@@ -88,7 +89,8 @@ public class MainView extends AppLayout {
     private Component[] createMenuItems() {
         return new Tab[]{createTab("Input", InputView.class), createTab("Text Area", TextAreaView.class),
                 createTab("Select Box", SelectBoxView.class), createTab("Radio Button", RadioButtonView.class),
-                createTab("Checkbox", CheckboxView.class), createTab("DateTimePicker", DateTimePickerView.class)};
+                createTab("Checkbox", CheckboxView.class), createTab("Date Time Picker", DateTimePickerView.class),
+                createTab("Range Date Time Picker", RangeDateTimePickerView.class)};
     }
 
     @Override
