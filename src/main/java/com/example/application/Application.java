@@ -1,8 +1,5 @@
 package com.example.application;
 
-import com.example.application.views.table.model.User;
-import com.example.application.views.table.TableView;
-import com.example.application.views.table.service.UserService;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.PWA;
 
@@ -25,10 +22,6 @@ import com.vaadin.flow.theme.Theme;
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
     public static void main(String[] args) {
-        for(int i = 0; i < 247; i++) {
-            User user = new User((long) (i + 1), i + "firstname", i + "lastname", "member" + i + "@sapiens.com");
-            UserService.users.add(user);
-        }
         LaunchUtil.launchBrowserInDevelopmentMode(SpringApplication.run(Application.class, args));
     }
 

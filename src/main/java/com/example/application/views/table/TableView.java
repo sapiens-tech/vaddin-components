@@ -41,7 +41,7 @@ public class TableView extends VerticalLayout {
     private int total;
     private int numberOfDisplayPage;
 
-    public TableView(@Autowired UserService userService) {
+    public TableView(UserService userService) {
 
         this.userService = userService;
 
