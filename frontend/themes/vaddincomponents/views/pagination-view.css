@@ -1,0 +1,15 @@
+.page-number-button {
+    width: 50px;
+    min-width: auto;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.page-number-button:hover {
+    border: 1px solid var(--_lumo-button-color, var(--lumo-primary-text-color));
+}
+
+.page-number-button.active {
+    background-color: var(--_lumo-button-color, var(--lumo-primary-text-color));
+    color: white;
+}
