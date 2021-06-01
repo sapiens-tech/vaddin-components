@@ -4,6 +4,7 @@ package com.example.application.views.table;
 import com.example.application.views.main.MainView;
 import com.example.application.views.table.model.User;
 import com.example.application.views.table.service.UserService;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
@@ -74,6 +75,7 @@ public class TableView extends VerticalLayout {
         nextButton = new Button(">");
         nextButton.addClassNames("page-number-button");
         gotoPage = new Button("Go to");
+        gotoPage.addClickShortcut(Key.ENTER);
         gridButton = new GridButton(pageChange(), page);
 
         setSizeFull();
@@ -191,21 +193,10 @@ public class TableView extends VerticalLayout {
 
 
     public void checkStyleButton() {
-        if(hasPrevious()) {
-            firstButton.setEnabled(false);
-            previousButton.setEnabled(false);
-        } else {
-            firstButton.setEnabled(true);
-            previousButton.setEnabled(true);
-        }
-
-        if(!hasNext()) {
-            nextButton.setEnabled(false);
-            lastButton.setEnabled(false);
-        } else {
-            nextButton.setEnabled(true);
-            lastButton.setEnabled(true);
-        }
+        firstButton.setEnabled(!hasPrevious());
+        previousButton.setEnabled(!hasPrevious());
+        nextButton.setEnabled(hasNext());
+        lastButton.setEnabled(hasNext());
     }
 
     public int getPage() {
