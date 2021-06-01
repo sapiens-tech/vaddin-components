@@ -1,6 +1,7 @@
 package com.example.application.views.main;
 
 import com.example.application.views.checkbox.CheckboxView;
+import com.example.application.views.collapse.CollapseView;
 import com.example.application.views.date_time_picker.DateTimePickerView;
 import com.example.application.views.input.InputView;
 import com.example.application.views.radiobutton.RadioButtonView;
@@ -90,7 +91,7 @@ public class MainView extends AppLayout {
         return new Tab[]{createTab("Input", InputView.class), createTab("Text Area", TextAreaView.class),
                 createTab("Select Box", SelectBoxView.class), createTab("Radio Button", RadioButtonView.class),
                 createTab("Checkbox", CheckboxView.class), createTab("Date Time Picker", DateTimePickerView.class),
-                createTab("Range Date Time Picker", RangeDateTimePickerView.class)};
+                createTab("Range Date Time Picker", RangeDateTimePickerView.class), createTab("Collapse", CollapseView.class)};
     }
 
     @Override
