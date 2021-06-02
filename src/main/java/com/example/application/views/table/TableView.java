@@ -65,6 +65,9 @@ public class TableView extends VerticalLayout {
         selectPage.setHelperText("Choose number items per page");
         pageField = new IntegerField();
         pageField.setValue(page);
+        pageField.setHasControls(true);
+        pageField.setMin(1);
+        pageField.setMax(totalPage());
         pageField.addThemeVariants(TextFieldVariant.LUMO_ALIGN_CENTER);
         firstButton = new Button("<<");
         firstButton.addClassNames("page-number-button");

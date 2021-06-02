@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import com.example.application.views.button.ButtonView;
 import com.example.application.views.table.TableView;
+import com.example.application.views.textbox.TextBoxView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -88,7 +89,8 @@ public class MainView extends AppLayout {
                 createTab("Select Box", SelectBoxView.class), createTab("Radio Button", RadioButtonView.class),
                 createTab("Checkbox", CheckboxView.class),
                 createTab("Table", TableView.class),
-                createTab("Button", ButtonView.class)
+                createTab("Button", ButtonView.class),
+                createTab("Text Box", TextBoxView.class)
         };
     }
 
