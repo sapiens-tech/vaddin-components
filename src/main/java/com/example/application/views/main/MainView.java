@@ -1,34 +1,30 @@
 package com.example.application.views.main;
 
-import java.util.Optional;
-
-import com.example.application.views.button.ButtonView;
-import com.example.application.views.table.TableView;
-import com.example.application.views.textbox.TextBoxView;
+import com.example.application.views.checkbox.CheckboxView;
+import com.example.application.views.collapse.CollapseView;
+import com.example.application.views.date_time_picker.DateTimePickerView;
+import com.example.application.views.input.InputView;
+import com.example.application.views.radiobutton.RadioButtonView;
+import com.example.application.views.range_date_time_picker.RangeDateTimePickerView;
+import com.example.application.views.selectbox.SelectBoxView;
+import com.example.application.views.textarea.TextAreaView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.avatar.Avatar;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
-import com.vaadin.flow.router.RouterLink;
-import com.vaadin.flow.server.PWA;
-import com.vaadin.flow.theme.Theme;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.PageTitle;
-import com.example.application.views.main.MainView;
-import com.example.application.views.input.InputView;
-import com.example.application.views.textarea.TextAreaView;
-import com.example.application.views.selectbox.SelectBoxView;
-import com.example.application.views.radiobutton.RadioButtonView;
-import com.example.application.views.checkbox.CheckboxView;
+import com.vaadin.flow.router.RouterLink;
+
+import java.util.Optional;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -43,6 +39,13 @@ public class MainView extends AppLayout {
         addToNavbar(true, createHeaderContent());
         menu = createMenu();
         addToDrawer(createDrawerContent(menu));
+    }
+
+    private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
+        final Tab tab = new Tab();
+        tab.add(new RouterLink(text, navigationTarget));
+        ComponentUtil.setData(tab, Class.class, navigationTarget);
+        return tab;
     }
 
     private Component createHeaderContent() {
@@ -90,15 +93,9 @@ public class MainView extends AppLayout {
                 createTab("Checkbox", CheckboxView.class),
                 createTab("Table", TableView.class),
                 createTab("Button", ButtonView.class),
-                createTab("Text Box", TextBoxView.class)
-        };
-    }
-
-    private static Tab createTab(String text, Class<? extends Component> navigationTarget) {
-        final Tab tab = new Tab();
-        tab.add(new RouterLink(text, navigationTarget));
-        ComponentUtil.setData(tab, Class.class, navigationTarget);
-        return tab;
+                createTab("Text Box", TextBoxView.class),
+                createTab("DateTimePicker", DateTimePickerView.class),
+                createTab("Range Date Time Picker", RangeDateTimePickerView.class), createTab("Collapse", CollapseView.class)};
     }
 
     @Override
