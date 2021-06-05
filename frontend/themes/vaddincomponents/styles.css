@@ -5,4 +5,6 @@
 @import url('./views/radio-button-view.css');
 @import url('./views/checkbox-view.css');
 @import url('./views/pagination-view.css');
+@import url('./views/button-view.css');
+@import url('./views/text-box-view.css');
 @import url('lumo-css-framework/all-classes.css');
