@@ -94,7 +94,6 @@ public class CheckboxView extends HorizontalLayout {
         products.add(p3);
         return products;
     }
-
 }
 
 class Product {

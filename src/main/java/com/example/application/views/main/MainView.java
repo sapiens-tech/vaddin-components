@@ -1,11 +1,14 @@
 package com.example.application.views.main;
 
+import com.example.application.views.button.ButtonView;
 import com.example.application.views.checkbox.CheckboxView;
 import com.example.application.views.date_time_picker.DateTimePickerView;
 import com.example.application.views.input.InputView;
 import com.example.application.views.radiobutton.RadioButtonView;
 import com.example.application.views.selectbox.SelectBoxView;
+import com.example.application.views.table.TableView;
 import com.example.application.views.textarea.TextAreaView;
+import com.example.application.views.textbox.TextBoxView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -88,7 +91,12 @@ public class MainView extends AppLayout {
     private Component[] createMenuItems() {
         return new Tab[]{createTab("Input", InputView.class), createTab("Text Area", TextAreaView.class),
                 createTab("Select Box", SelectBoxView.class), createTab("Radio Button", RadioButtonView.class),
-                createTab("Checkbox", CheckboxView.class), createTab("DateTimePicker", DateTimePickerView.class)};
+                createTab("Checkbox", CheckboxView.class),
+                createTab("Table", TableView.class),
+                createTab("Button", ButtonView.class),
+                createTab("Text Box", TextBoxView.class),
+                createTab("DateTimePicker", DateTimePickerView.class)};
+
     }
 
     @Override
