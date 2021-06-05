@@ -1,14 +1,13 @@
 package com.example.application.views.main;
 
-import com.example.application.views.button.ButtonView;
 import com.example.application.views.checkbox.CheckboxView;
+import com.example.application.views.collapse.CollapseView;
 import com.example.application.views.date_time_picker.DateTimePickerView;
 import com.example.application.views.input.InputView;
 import com.example.application.views.radiobutton.RadioButtonView;
+import com.example.application.views.range_date_time_picker.RangeDateTimePickerView;
 import com.example.application.views.selectbox.SelectBoxView;
-import com.example.application.views.table.TableView;
 import com.example.application.views.textarea.TextAreaView;
-import com.example.application.views.textbox.TextBoxView;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -95,8 +94,8 @@ public class MainView extends AppLayout {
                 createTab("Table", TableView.class),
                 createTab("Button", ButtonView.class),
                 createTab("Text Box", TextBoxView.class),
-                createTab("DateTimePicker", DateTimePickerView.class)};
-
+                createTab("DateTimePicker", DateTimePickerView.class),
+                createTab("Range Date Time Picker", RangeDateTimePickerView.class), createTab("Collapse", CollapseView.class)};
     }
 
     @Override
